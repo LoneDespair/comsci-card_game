@@ -1,0 +1,21 @@
+[gd_scene format=2]
+
+[node name="main" type="Node"]
+
+[node name="ui" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="buttons" type="VBoxContainer" parent="ui"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+
+[node name="play" type="Button" parent="ui/buttons"]
+margin_top = 280.0
+margin_right = 1024.0
+margin_bottom = 320.0
+rect_min_size = Vector2( 0, 40 )
+text = "Play"
+
+[node name="Node" type="Node" parent="."]
