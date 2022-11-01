@@ -19,6 +19,7 @@ margin_top = 120.0
 margin_right = 1024.0
 margin_bottom = 237.0
 size_flags_vertical = 3
+theme_type_variation = "AnswerButton"
 text = "A. Answer"
 
 [node name="answer_2" type="Button" parent="content"]
