@@ -17,10 +17,14 @@ func check() -> void:
 	
 	for holder in answer_container.get_children():
 		if holder.get_child_count() != 1:
-			break
+			return
 		
 		var letter_scn := holder.get_child(0) as Button
 		answer += letter_scn.text
 	
 	if answer == key:
+		
 		prints("Victory")
+	
+	else:
+		prints("%s does not match the key %s" % [answer, key])

@@ -10,7 +10,6 @@ signal letter_pressed(letter_scn)
 
 
 func _ready() -> void:
-	initiator.connect("setup_finished", self, "setup")
 	checker.connect("key_setuped", self, "setup")
 
 
@@ -31,8 +30,7 @@ func get_holder() -> Control:
 func add(letter_scn : Button, holder : Control) -> void:
 	holder.add_child(letter_scn)
 	letter_scn.connect("pressed", self, "press", [letter_scn])
-	
-	
+	checker.check()
 
 
 func press(letter_scn : Button) -> void:
