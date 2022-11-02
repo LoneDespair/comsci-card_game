@@ -1,14 +1,27 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/play/initiator.gd" type="Script" id=1]
 [ext_resource path="res://src/play/circular_progress.png" type="Texture" id=2]
-[ext_resource path="res://src/play/card.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/card/card.tscn" type="PackedScene" id=3]
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color( 0.309804, 0.309804, 0.309804, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
 
 [node name="play" type="Node"]
 
 [node name="content" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
 
 [node name="timer_progress" type="TextureProgress" parent="content"]
 margin_left = 130.0
@@ -29,56 +42,101 @@ margin_top = 44.0
 margin_right = 300.0
 margin_bottom = 512.0
 size_flags_vertical = 3
+custom_styles/bg = SubResource( 2 )
 follow_focus = true
-scroll_deadzone = 10
+scroll_vertical_enabled = false
 
 [node name="HBoxContainer" type="VBoxContainer" parent="content/ScrollContainer"]
-margin_right = 790.0
-margin_bottom = 456.0
+show_behind_parent = true
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 805.0
+margin_bottom = 463.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 0
 
 [node name="top" type="Control" parent="content/ScrollContainer/HBoxContainer"]
-margin_right = 790.0
+margin_right = 800.0
 margin_bottom = 20.0
 rect_min_size = Vector2( 0, 20 )
 
 [node name="HBoxContainer" type="HBoxContainer" parent="content/ScrollContainer/HBoxContainer"]
 margin_top = 20.0
-margin_right = 790.0
-margin_bottom = 436.0
+margin_right = 800.0
+margin_bottom = 438.0
 size_flags_vertical = 3
-custom_constants/separation = 20
+custom_constants/separation = 15
 
 [node name="left" type="Control" parent="content/ScrollContainer/HBoxContainer/HBoxContainer"]
 margin_right = 10.0
-margin_bottom = 416.0
+margin_bottom = 418.0
 rect_min_size = Vector2( 10, 0 )
 
 [node name="card1" parent="content/ScrollContainer/HBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
 unique_name_in_owner = true
-margin_left = 30.0
-margin_top = 0.0
-margin_bottom = 416.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 25.0
+margin_top = 19.0
+margin_right = 265.0
+margin_bottom = 399.0
+
+[node name="ui" parent="content/ScrollContainer/HBoxContainer/HBoxContainer/card1" index="0"]
+rect_scale = Vector2( 1.1, 1.1 )
 
 [node name="card2" parent="content/ScrollContainer/HBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
-margin_left = 290.0
-margin_top = 0.0
-margin_right = 530.0
-margin_bottom = 416.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 280.0
+margin_top = 19.0
+margin_right = 520.0
+margin_bottom = 399.0
+
+[node name="VBoxContainer" parent="content/ScrollContainer/HBoxContainer/HBoxContainer/card2/ui" index="0"]
+visible = false
 
 [node name="card3" parent="content/ScrollContainer/HBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
-margin_left = 550.0
-margin_top = 0.0
-margin_right = 790.0
-margin_bottom = 416.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 535.0
+margin_top = 19.0
+margin_right = 775.0
+margin_bottom = 399.0
+
+[node name="VBoxContainer" parent="content/ScrollContainer/HBoxContainer/HBoxContainer/card3/ui" index="0"]
+visible = false
+
+[node name="right" type="Control" parent="content/ScrollContainer/HBoxContainer/HBoxContainer"]
+margin_left = 790.0
+margin_right = 800.0
+margin_bottom = 418.0
+rect_min_size = Vector2( 10, 0 )
 
 [node name="bottom" type="Control" parent="content/ScrollContainer/HBoxContainer"]
-margin_top = 436.0
-margin_right = 790.0
-margin_bottom = 456.0
+margin_top = 438.0
+margin_right = 800.0
+margin_bottom = 458.0
 rect_min_size = Vector2( 0, 20 )
+
+[node name="PanelContainer" type="PanelContainer" parent="content"]
+visible = false
+margin_top = 512.0
+margin_right = 300.0
+margin_bottom = 512.0
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 6
+custom_styles/panel = SubResource( 3 )
 
 [node name="initiator" type="Node" parent="."]
 script = ExtResource( 1 )
+
+[editable path="content/ScrollContainer/HBoxContainer/HBoxContainer/card1"]
+[editable path="content/ScrollContainer/HBoxContainer/HBoxContainer/card2"]
+[editable path="content/ScrollContainer/HBoxContainer/HBoxContainer/card3"]
