@@ -21,11 +21,13 @@ func _ready() -> void:
 		checker.connect("correct", self, "correct")
 		checker.setup(key)
 		
+		card_scn.get_node("ui").theme_type_variation = "BackCard"
+		card_scn.get_node("%content").hide()
 		
 		
 
 
 func correct() -> void:
-	scroll.scroll_horizontal += 300
+	scroll.scroll_horizontal += 250
 
 
