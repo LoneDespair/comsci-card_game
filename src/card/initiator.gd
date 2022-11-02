@@ -1,19 +1,35 @@
-extends Node
+extends Control
 
-onready var answer_container := $"%answer"
+const LETTER_PCK := preload("./letter.tscn")
+
+# Extra random letters
+const DUMMY_COUNT := 3
+const A_ASCII := 65
+const Z_ASCII := 90
+
 onready var selection_container := $"%selection"
 
+var key := "CAKE"
+#69-90
 
 func _ready() -> void:
+	var selection := []
 	
+	for letter in key:
+		selection.append(letter)
 	
-	for letter in selection_container.get_children():
-		letter.connect("pressed", self, "select", [letter])
+	for idx in DUMMY_COUNT:
+		var num := randi() % (Z_ASCII - A_ASCII) + A_ASCII
+		selection.append(char(num))
 	
-
-
-func select(letter : Button) -> void:
-	selection_container.remove_child(letter)
-	answer_container.add_child(letter)
+	randomize()
+	selection.shuffle()
+	
+	for letter in selection:
+		var letter_scn := LETTER_PCK.instance() as Button
+		
+		selection_container.add_child(letter_scn)
+		letter_scn.text = letter
+		letter_scn
 
 

@@ -1,0 +1,11 @@
+[gd_scene format=2]
+
+[node name="letter" type="Button"]
+margin_left = 135.0
+margin_right = 165.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 30, 40 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_type_variation = "LetterButton"
+text = "!"

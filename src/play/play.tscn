@@ -97,9 +97,6 @@ margin_top = 19.0
 margin_right = 520.0
 margin_bottom = 399.0
 
-[node name="VBoxContainer" parent="content/ScrollContainer/HBoxContainer/HBoxContainer/card2/ui" index="0"]
-visible = false
-
 [node name="card3" parent="content/ScrollContainer/HBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
 anchor_left = 0.0
 anchor_top = 0.0
@@ -109,9 +106,6 @@ margin_left = 535.0
 margin_top = 19.0
 margin_right = 775.0
 margin_bottom = 399.0
-
-[node name="VBoxContainer" parent="content/ScrollContainer/HBoxContainer/HBoxContainer/card3/ui" index="0"]
-visible = false
 
 [node name="right" type="Control" parent="content/ScrollContainer/HBoxContainer/HBoxContainer"]
 margin_left = 790.0

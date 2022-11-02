@@ -1,3 +1,8 @@
 extends Node
 
-#onready var 
+onready var answer_container := $"%answer"
+
+
+func _ready() -> void:
+	pass
+
