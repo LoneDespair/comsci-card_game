@@ -5,6 +5,7 @@ onready var answer_container := $"%answer"
 var key : String
 
 signal key_setuped
+signal correct
 
 
 func setup(new_key : String) -> void:
@@ -23,8 +24,9 @@ func check() -> void:
 		answer += letter_scn.text
 	
 	if answer == key:
-		
-		prints("Victory")
+		emit_signal("correct")
 	
 	else:
 		prints("%s does not match the key %s" % [answer, key])
+
+

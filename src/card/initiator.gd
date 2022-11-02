@@ -5,6 +5,6 @@ var key := "CAKE"
 onready var checker := $"../checker"
 
 
-func _ready() -> void:
-	checker.setup(key)
+#func _ready() -> void:
+#	checker.setup(key)
 
