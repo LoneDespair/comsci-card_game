@@ -24,46 +24,61 @@ fill_mode = 4
 tint_under = Color( 0.737255, 0.737255, 0.737255, 1 )
 nine_patch_stretch = true
 
-[node name="Control" type="Control" parent="content"]
-margin_top = 44.0
-margin_right = 300.0
-margin_bottom = 44.0
-
 [node name="ScrollContainer" type="ScrollContainer" parent="content"]
-margin_top = 48.0
+margin_top = 44.0
 margin_right = 300.0
 margin_bottom = 512.0
 size_flags_vertical = 3
 follow_focus = true
 scroll_deadzone = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="content/ScrollContainer"]
-margin_right = 795.0
-margin_bottom = 452.0
+[node name="HBoxContainer" type="VBoxContainer" parent="content/ScrollContainer"]
+margin_right = 790.0
+margin_bottom = 456.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/separation = 25
+custom_constants/separation = 0
 
-[node name="Control" type="Control" parent="content/ScrollContainer/HBoxContainer"]
-margin_bottom = 452.0
+[node name="top" type="Control" parent="content/ScrollContainer/HBoxContainer"]
+margin_right = 790.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 0, 20 )
 
-[node name="card" parent="content/ScrollContainer/HBoxContainer" instance=ExtResource( 3 )]
-margin_left = 25.0
+[node name="HBoxContainer" type="HBoxContainer" parent="content/ScrollContainer/HBoxContainer"]
+margin_top = 20.0
+margin_right = 790.0
+margin_bottom = 436.0
+size_flags_vertical = 3
+custom_constants/separation = 20
+
+[node name="left" type="Control" parent="content/ScrollContainer/HBoxContainer/HBoxContainer"]
+margin_right = 10.0
+margin_bottom = 416.0
+rect_min_size = Vector2( 10, 0 )
+
+[node name="card1" parent="content/ScrollContainer/HBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+unique_name_in_owner = true
+margin_left = 30.0
 margin_top = 0.0
-margin_right = 265.0
-margin_bottom = 452.0
+margin_bottom = 416.0
 
-[node name="card2" parent="content/ScrollContainer/HBoxContainer" instance=ExtResource( 3 )]
+[node name="card2" parent="content/ScrollContainer/HBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
 margin_left = 290.0
 margin_top = 0.0
 margin_right = 530.0
-margin_bottom = 452.0
+margin_bottom = 416.0
 
-[node name="card3" parent="content/ScrollContainer/HBoxContainer" instance=ExtResource( 3 )]
-margin_left = 555.0
+[node name="card3" parent="content/ScrollContainer/HBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+margin_left = 550.0
 margin_top = 0.0
-margin_right = 795.0
-margin_bottom = 452.0
+margin_right = 790.0
+margin_bottom = 416.0
+
+[node name="bottom" type="Control" parent="content/ScrollContainer/HBoxContainer"]
+margin_top = 436.0
+margin_right = 790.0
+margin_bottom = 456.0
+rect_min_size = Vector2( 0, 20 )
 
 [node name="initiator" type="Node" parent="."]
 script = ExtResource( 1 )
