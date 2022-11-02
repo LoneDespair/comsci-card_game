@@ -1,0 +1,9 @@
+[gd_scene format=2]
+
+[node name="holder" type="PanelContainer"]
+margin_left = 90.0
+margin_top = 17.0
+margin_right = 120.0
+margin_bottom = 57.0
+rect_min_size = Vector2( 30, 40 )
+size_flags_vertical = 6
