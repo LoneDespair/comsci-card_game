@@ -28,4 +28,3 @@ func setup(key : String) -> void:
 		
 		selection_container.add_child(letter_scn)
 		letter_scn.text = letter
-		letter_scn

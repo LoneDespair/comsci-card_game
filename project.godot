@@ -12,6 +12,8 @@ config_version=4
 
 config/name="adet_midterms"
 run/main_scene="res://src/main/main.tscn"
+boot_splash/show_image=false
+boot_splash/bg_color=Color( 1, 1, 1, 1 )
 config/icon="res://icon.png"
 
 [display]
