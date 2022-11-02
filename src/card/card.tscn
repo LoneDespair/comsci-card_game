@@ -101,14 +101,14 @@ visible = false
 position = Vector2( 78, 301 )
 texture = ExtResource( 3 )
 
-[node name="letter_logic" type="Node" parent="."]
-script = ExtResource( 4 )
-
 [node name="answer_logic" type="Node" parent="."]
 script = ExtResource( 2 )
 
 [node name="selection_logic" type="Node" parent="."]
 script = ExtResource( 5 )
+
+[node name="letter_logic" type="Node" parent="."]
+script = ExtResource( 4 )
 
 [node name="initiator" type="Control" parent="."]
 anchor_right = 1.0

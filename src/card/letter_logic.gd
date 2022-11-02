@@ -7,7 +7,7 @@ const DUMMY_COUNT := 3
 const A_ASCII := 65
 const Z_ASCII := 90
 
-onready var selection_container := $"%selection"
+onready var selection_logic := $"../selection_logic"
 
 
 func setup(key : String) -> void:
@@ -25,6 +25,6 @@ func setup(key : String) -> void:
 	
 	for letter in selection:
 		var letter_scn := LETTER_PCK.instance() as Button
-		
-		selection_container.add_child(letter_scn)
 		letter_scn.text = letter
+		
+		selection_logic.add(letter_scn)

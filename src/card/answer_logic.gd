@@ -2,10 +2,10 @@ extends Node
 
 const HOLDER := preload("./holder.tscn")
 
-var next_idx := 0
-
 onready var answer_container := $"%answer"
 onready var initiator := $"../initiator"
+
+signal letter_pressed(letter_scn)
 
 
 func _ready() -> void:
@@ -18,11 +18,22 @@ func setup(key : String) -> void:
 		answer_container.add_child(holder)
 
 
-func add(letter_scn : Button) -> void:
-	var holder := answer_container.get_child(next_idx)
+func get_holder() -> Control:
+	for holder in answer_container.get_children():
+		if holder.get_child_count() == 0:
+			return holder
+	
+	return null
+
+
+func add(letter_scn : Button, holder : Control) -> void:
 	holder.add_child(letter_scn)
+	letter_scn.connect("pressed", self, "press", [letter_scn])
+
+
+func press(letter_scn : Button) -> void:
+	letter_scn.get_parent().remove_child(letter_scn)
 	
-	next_idx += 1
-	
-	
+	letter_scn.disconnect("pressed", self, "press")
+	emit_signal("letter_pressed", letter_scn)
 

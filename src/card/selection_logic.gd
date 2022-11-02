@@ -5,17 +5,23 @@ onready var answer_container := $"%answer"
 onready var answer_logic := $"../answer_logic"
 
 
-func setup() -> void:
-	for letter_scn in selection_container.get_children():
-		letter_scn.connect("pressed", self, "select", [letter_scn])
+func _ready() -> void:
+	answer_logic.connect("letter_pressed", self, "add")
+
+
+func add(letter_scn : Button) -> void:
+	letter_scn.connect("pressed", self, "select", [letter_scn])
+	selection_container.add_child(letter_scn)
 
 
 func select(letter_scn : Button) -> void:
-	if answer_logic.next_idx < answer_container.get_child_count():
+	var holder = answer_logic.get_holder()
+	
+	if is_instance_valid(holder):
 		selection_container.remove_child(letter_scn)
 		letter_scn.disconnect("pressed", self, "select")
 		
-		answer_logic.add(letter_scn)
+		answer_logic.add(letter_scn, holder)
 	
 	else:
 		prints("Answer fulll")
