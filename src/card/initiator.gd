@@ -2,15 +2,11 @@ extends Control
 
 var key := "CAKE"
 
+onready var checker := $"../checker"
+
 signal setup_finished
-
-onready var letter_logic := $"../letter_logic"
-onready var answer_logic := $"../answer_logic"
-
 
 
 func _ready() -> void:
-	letter_logic.setup(key)
-	answer_logic.setup(key)
-
+	checker.setup(key)
 

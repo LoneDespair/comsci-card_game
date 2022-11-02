@@ -8,6 +8,11 @@ const A_ASCII := 65
 const Z_ASCII := 90
 
 onready var selection_logic := $"../selection_logic"
+onready var checker := $"../checker"
+
+
+func _ready() -> void:
+	checker.connect("key_setuped", self, "setup")
 
 
 func setup(key : String) -> void:
