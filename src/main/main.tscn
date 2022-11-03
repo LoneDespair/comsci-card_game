@@ -15,9 +15,9 @@ alignment = 1
 
 [node name="play" type="Button" parent="ui/buttons"]
 unique_name_in_owner = true
-margin_top = 280.0
-margin_right = 1024.0
-margin_bottom = 320.0
+margin_top = 236.0
+margin_right = 300.0
+margin_bottom = 276.0
 rect_min_size = Vector2( 0, 40 )
 text = "Play"
 
