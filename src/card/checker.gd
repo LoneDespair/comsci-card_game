@@ -1,6 +1,8 @@
 extends Node
 
 onready var answer_container := $"%answer"
+onready var correct_label := $"%correct"
+onready var wrong_label := $"%wrong"
 
 var key : String
 
@@ -37,22 +39,29 @@ func check() -> void:
 		answer += letter_scn.text
 	
 	if answer == key:
+		correct_label.show()
 		emit_signal("correct")
 	
 	else:
+		wrong_label.show()
 		for idx in letter_list.size():
 			var letter_scn := letter_list[idx] as Button
 			letter_scn.theme_type_variation = "WrongLetter"
+			letter_scn.get_node("animator").current_animation = "wrong"
 		
 		prints("%s does not match the key %s" % [answer, key])
 
 
 func uncheck() -> void:
+	wrong_label.hide()
+	
 	var letter_list := get_letter_list()
 	
 	for idx in letter_list.size():
 		var letter_scn := letter_list[idx] as Button
 		letter_scn.theme_type_variation = "NeutralLetter"
+		letter_scn.get_node("animator").stop()
+		letter_scn.get_node("animator").seek(0, true)
 	
 
 
