@@ -1,10 +1,16 @@
 extends Control
 
-var key := "CAKE"
+onready var ui := $"../ui"
+onready var content := $"%content"
 
-onready var checker := $"../checker"
 
-
-#func _ready() -> void:
-#	checker.setup(key)
-
+func set_front(is_front : bool) -> void:
+	content.visible = is_front
+	
+	if is_front:
+		ui.theme_type_variation = "FrontCard" 
+	
+	else:
+		ui.theme_type_variation = "BackCard"
+	
+	

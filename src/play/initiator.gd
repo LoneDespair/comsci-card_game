@@ -3,9 +3,9 @@ extends Node
 const CARD_PCK := preload("../card/card.tscn")
 
 onready var deck := $"%deck"
-onready var scroll := $"%scroll"
+#onready var scroll := $"%scroll"
 
-var next_idx := 0
+var current_idx := -1
 var key_list := ["COCO", "DONUT", "JELLY", "CAKE"]
 
 
@@ -21,20 +21,28 @@ func _ready() -> void:
 		checker.connect("correct", self, "correct")
 		checker.setup(key)
 		
-		card_scn.get_node("ui").theme_type_variation = "BackCard"
-		card_scn.get_node("%content").hide()
+		card_scn.get_node("initiator").set_front(false)
 	
 	next()
 
 
 func next() -> void:
-	if next_idx < deck.get_child_count():
-		var card_scn := deck.get_child(next_idx)
-		card_scn.get_node("ui").theme_type_variation = "FrontCard"
-		card_scn.get_node("%content").show()
+	var card_count := deck.get_child_count()
+	
+	if card_count <= 0:
+		return
+	
+	if current_idx > -1:
+		deck.get_child(current_idx).get_node("initiator").set_front(false)
+	
+	if current_idx < card_count:
+		current_idx += 1
+		var card_scn := deck.get_child(current_idx)
+		card_scn.get_node("initiator").set_front(true)
 		
-		scroll.scroll_horizontal = (card_scn.rect_size.x + 10) * next_idx
-		next_idx += 1
+		deck.rect_position
+#		scroll.scroll_horizontal = (card_scn.rect_size.x + 10) * current_idx
+		
 		prints("NExt")
 	
 	else:
