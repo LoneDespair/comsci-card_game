@@ -37,10 +37,10 @@ func next() -> void:
 	
 	if current_idx < card_count:
 		current_idx += 1
-		var card_scn := deck.get_child(current_idx)
+		var card_scn := deck.get_child(current_idx) as Control
 		card_scn.get_node("initiator").set_front(true)
 		
-		deck.rect_position
+		deck.rect_position.x -= (card_scn.rect_size.x + 10)
 #		scroll.scroll_horizontal = (card_scn.rect_size.x + 10) * current_idx
 		
 		prints("NExt")
