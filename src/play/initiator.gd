@@ -45,7 +45,7 @@ func next() -> void:
 		var card_scn := deck.get_child(current_idx) as Control
 		card_scn.get_node("initiator").set_front(true)
 		
-		deck.rect_position.x -= (card_scn.rect_size.x + 10)
+		deck.rect_position.x -= card_scn.rect_size.x + 5
 		prints("NExt")
 	
 	else:
