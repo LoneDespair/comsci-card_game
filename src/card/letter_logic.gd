@@ -9,6 +9,7 @@ const Z_ASCII := 90
 
 onready var selection_logic := $"../selection_logic"
 onready var checker := $"../checker"
+onready var letter_audio := $"../letter_audio"
 
 
 func _ready() -> void:
@@ -31,5 +32,5 @@ func setup(key : String) -> void:
 	for letter in selection:
 		var letter_scn := LETTER_PCK.instance() as Button
 		letter_scn.text = letter
-		
+		letter_scn.connect("pressed", letter_audio, "play")
 		selection_logic.add(letter_scn)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/card/initiator.gd" type="Script" id=1]
 [ext_resource path="res://src/card/answer_logic.gd" type="Script" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://src/card/selection_logic.gd" type="Script" id=5]
 [ext_resource path="res://src/card/checker.gd" type="Script" id=6]
 [ext_resource path="res://src/main/roboto_regular.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://src/card/card_place.ogg" type="AudioStream" id=8]
+[ext_resource path="res://src/card/letter_place.ogg" type="AudioStream" id=9]
 
 [sub_resource type="DynamicFont" id=6]
 size = 18
@@ -190,6 +192,13 @@ text = "Next"
 
 [node name="checker" type="Node" parent="."]
 script = ExtResource( 6 )
+
+[node name="letter_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="card_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+autoplay = true
 
 [node name="answer_logic" type="Node" parent="."]
 script = ExtResource( 2 )

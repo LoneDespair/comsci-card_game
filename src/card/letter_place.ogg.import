@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/letter_place.ogg-e039ef4d98ebe6a4c1546fead81cfb60.oggstr"
+
+[deps]
+
+source_file="res://src/card/letter_place.ogg"
+dest_files=[ "res://.import/letter_place.ogg-e039ef4d98ebe6a4c1546fead81cfb60.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

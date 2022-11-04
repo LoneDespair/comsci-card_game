@@ -3,6 +3,7 @@ extends Node
 const CARD_PCK := preload("../card/card.tscn")
 
 var card_scn : Control
+var wave_count := -1
 
 var key_table := {
 	"LOGIC" : "The basis of all mathematical reasoning, and of all automated reasoning",
@@ -24,6 +25,8 @@ var key_list := key_table.keys()
 onready var deck := $"%deck"
 onready var circular_initiator := $"%circular_timer/initiator"
 onready var fire := $"%fire"
+onready var wave_label := $"%wave"
+onready var gameover_scn := $"%gameover"
 
 
 func _ready() -> void:
@@ -37,21 +40,27 @@ func next() -> void:
 	if is_instance_valid(card_scn):
 		prints("Animate an exit sequence")
 	
-	card_scn = CARD_PCK.instance()
-	deck.add_child(card_scn)
+	wave_count += 1
+	wave_label.text = "%d/10" % wave_count
 	
-	var key = key_list.pop_back()
-	card_scn.get_node("%question").text = key_table[key]
-	card_scn.get_node("checker").setup(key)
+	if wave_count >= 10:
+		gameover_scn.show()
+		fire.emitting = true
 	
-	circular_initiator.start()
-	var card_initiator := card_scn.get_node("initiator")
-	
-	circular_initiator.connect("timeout", card_initiator, "timeout")
-	card_scn.get_node("checker").connect("correct", self, "correct")
-	card_scn.get_node("%next").connect("pressed", self, "next")
-	
-#	deck.rect_position.x -= card_scn.rect_size.x + 5
+	else:
+		card_scn = CARD_PCK.instance()
+		deck.add_child(card_scn)
+		
+		var key = key_list.pop_back()
+		card_scn.get_node("%question").text = key_table[key]
+		card_scn.get_node("checker").setup(key)
+		
+		circular_initiator.start()
+		var card_initiator := card_scn.get_node("initiator")
+		
+		circular_initiator.connect("timeout", card_initiator, "timeout")
+		card_scn.get_node("checker").connect("correct", self, "correct")
+		card_scn.get_node("%next").connect("pressed", self, "next")
 
 
 func correct() -> void:
