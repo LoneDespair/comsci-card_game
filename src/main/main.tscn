@@ -1,8 +1,17 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://src/main/scenes.gd" type="Script" id=1]
 [ext_resource path="res://src/main/card_empty.png" type="Texture" id=2]
 [ext_resource path="res://src/main/card_back.png" type="Texture" id=3]
+[ext_resource path="res://src/main/roboto-bold.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+font_data = ExtResource( 4 )
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -18,6 +27,38 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("background:rect_position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("background:rect_position:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ColorRect:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "pan"
@@ -25,7 +66,7 @@ loop = true
 step = 0.25
 tracks/0/type = "value"
 tracks/0/path = NodePath("background:rect_position")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -33,7 +74,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 32, 32 ), Vector2( 0, 0 ), Vector2( -32, -32 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( 150, 256 ), Vector2( 176, 248 ), Vector2( 128, 256 ), Vector2( 88, 288 ), Vector2( 150, 256 ) ]
 }
 
 [node name="main" type="Node"]
@@ -57,7 +98,9 @@ margin_bottom = 276.0
 rect_min_size = Vector2( 0, 40 )
 text = "Play"
 
-[node name="menu" type="Node" parent="."]
+[node name="menu" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
 
 [node name="background" type="Control" parent="menu"]
 anchor_left = 0.5
@@ -70,55 +113,55 @@ margin_right = -150.0
 margin_bottom = -256.0
 
 [node name="CardBack" type="Sprite" parent="menu/background"]
-position = Vector2( -85.8106, 334.381 )
+position = Vector2( -201.621, -9.61887 )
 rotation = -0.505746
 scale = Vector2( 3.47029, 3.47029 )
 texture = ExtResource( 3 )
 
 [node name="CardBack6" type="Sprite" parent="menu/background"]
-position = Vector2( -256, 424 )
+position = Vector2( -371.811, 80 )
 rotation = -0.505746
 scale = Vector2( 3.47029, 3.47029 )
 texture = ExtResource( 3 )
 
 [node name="CardBack5" type="Sprite" parent="menu/background"]
-position = Vector2( 152, 552 )
+position = Vector2( 36.1894, 208 )
 rotation = -0.505746
 scale = Vector2( 3.47029, 3.47029 )
 texture = ExtResource( 3 )
 
 [node name="CardBack8" type="Sprite" parent="menu/background"]
-position = Vector2( 480, 384 )
+position = Vector2( 364.189, 40 )
 rotation = -0.505746
 scale = Vector2( 3.47029, 3.47029 )
 texture = ExtResource( 3 )
 
 [node name="CardBack9" type="Sprite" parent="menu/background"]
-position = Vector2( -24, 640 )
+position = Vector2( -139.811, 296 )
 rotation = -0.505746
 scale = Vector2( 3.47029, 3.47029 )
 texture = ExtResource( 3 )
 
 [node name="CardBack2" type="Sprite" parent="menu/background"]
-position = Vector2( 58.1894, 254.381 )
+position = Vector2( -57.6212, -89.6189 )
 rotation = -0.505746
 scale = Vector2( 3.47029, 3.47029 )
 texture = ExtResource( 2 )
 
 [node name="CardBack7" type="Sprite" parent="menu/background"]
-position = Vector2( 314.189, 470.381 )
+position = Vector2( 198.379, 126.381 )
 rotation = -0.505746
 scale = Vector2( 3.47029, 3.47029 )
 texture = ExtResource( 2 )
 
 [node name="CardBack3" type="Sprite" parent="menu/background"]
-position = Vector2( 210.189, 174.381 )
+position = Vector2( 94.3788, -169.619 )
 rotation = -0.505746
 scale = Vector2( 3.47029, 3.47029 )
 texture = ExtResource( 3 )
 
 [node name="CardBack4" type="Sprite" parent="menu/background"]
-position = Vector2( 362.189, 94.3811 )
+position = Vector2( 246.379, -249.619 )
 rotation = -0.505746
 scale = Vector2( 3.47029, 3.47029 )
 texture = ExtResource( 3 )
@@ -126,12 +169,12 @@ texture = ExtResource( 3 )
 [node name="Label" type="Label" parent="menu/background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -40.0
-margin_top = 200.0
-margin_right = 78.0
-margin_bottom = 388.0
+margin_left = -155.811
+margin_top = -144.0
+margin_right = -37.8106
+margin_bottom = 44.0
 rect_rotation = -28.9383
-text = "What is the meaning of life?"
+text = "Name of the first computer?"
 align = 1
 valign = 1
 autowrap = true
@@ -139,10 +182,10 @@ autowrap = true
 [node name="Label2" type="Label" parent="menu/background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 218.189
-margin_top = 422.381
-margin_right = 336.189
-margin_bottom = 610.381
+margin_left = 102.379
+margin_top = 78.381
+margin_right = 220.379
+margin_bottom = 266.381
 rect_rotation = -28.9383
 text = "What is the meaning of life?"
 align = 1
@@ -152,7 +195,7 @@ autowrap = true
 [node name="ColorRect" type="ColorRect" parent="menu"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 1, 1, 1, 0.498039 )
+color = Color( 1, 1, 1, 0.847059 )
 
 [node name="MarginContainer" type="MarginContainer" parent="menu"]
 anchor_right = 1.0
@@ -160,48 +203,56 @@ anchor_bottom = 1.0
 custom_constants/margin_right = 8
 custom_constants/margin_top = 8
 custom_constants/margin_left = 8
-custom_constants/margin_bottom = 8
+custom_constants/margin_bottom = 15
 
 [node name="VBoxContainer" type="VBoxContainer" parent="menu/MarginContainer"]
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 292.0
-margin_bottom = 504.0
+margin_bottom = 497.0
 
 [node name="header" type="MarginContainer" parent="menu/MarginContainer/VBoxContainer"]
 margin_right = 284.0
 margin_bottom = 25.0
+rect_min_size = Vector2( 0, 25 )
 
-[node name="settings" type="Button" parent="menu/MarginContainer/VBoxContainer/header"]
-margin_left = 278.0
+[node name="Label" type="Label" parent="menu/MarginContainer/VBoxContainer"]
+margin_top = 76.0
 margin_right = 284.0
-margin_bottom = 25.0
-size_flags_horizontal = 8
-
-[node name="PanelContainer" type="PanelContainer" parent="menu/MarginContainer/VBoxContainer"]
-margin_top = 29.0
-margin_right = 284.0
-margin_bottom = 62.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="menu/MarginContainer/VBoxContainer/PanelContainer"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 277.0
-margin_bottom = 26.0
-
-[node name="Label" type="Label" parent="menu/MarginContainer/VBoxContainer/PanelContainer/HBoxContainer"]
-margin_right = 81.0
-margin_bottom = 19.0
-text = "Total score"
-
-[node name="Button" type="Button" parent="menu/MarginContainer/VBoxContainer"]
-margin_top = 268.0
-margin_right = 284.0
-margin_bottom = 293.0
+margin_bottom = 124.0
 size_flags_vertical = 6
+custom_fonts/font = SubResource( 3 )
+text = "Word Builder"
+align = 1
+
+[node name="Label2" type="Label" parent="menu/MarginContainer/VBoxContainer"]
+margin_top = 176.0
+margin_right = 284.0
+margin_bottom = 195.0
+
+[node name="play" type="Button" parent="menu/MarginContainer/VBoxContainer"]
+margin_left = 87.0
+margin_top = 250.0
+margin_right = 197.0
+margin_bottom = 290.0
+rect_min_size = Vector2( 110, 40 )
+size_flags_horizontal = 4
+size_flags_vertical = 6
+custom_fonts/font = SubResource( 4 )
 text = "Play"
 
+[node name="Label3" type="Label" parent="menu/MarginContainer/VBoxContainer"]
+margin_top = 426.0
+margin_right = 284.0
+margin_bottom = 489.0
+size_flags_vertical = 10
+text = "Members:
+Robert Sardilla
+Kenrix"
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="menu"]
+autoplay = "pan"
+playback_speed = 0.07
 anims/RESET = SubResource( 1 )
 anims/pan = SubResource( 2 )
 
