@@ -26,7 +26,7 @@ func stop() -> void:
 
 
 func _process(delta: float) -> void:
-	remaining_time -= delta
+	remaining_time = max(remaining_time - delta, 0)
 	progress_bar.value = remaining_time
 	count_label.text = str(ceil(remaining_time))
 	
