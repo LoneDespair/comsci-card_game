@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://src/main/scenes.gd" type="Script" id=1]
 [ext_resource path="res://src/main/card_empty.png" type="Texture" id=2]
 [ext_resource path="res://src/main/card_back.png" type="Texture" id=3]
 [ext_resource path="res://src/main/roboto-bold.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://src/main/rolemusic-la_calahorra.mp3" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=3]
 size = 40
@@ -16,7 +17,7 @@ font_data = ExtResource( 4 )
 [sub_resource type="Animation" id=1]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath("background:rect_position")
+tracks/0/path = NodePath("background/background:rect_position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -28,7 +29,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/1/type = "bezier"
-tracks/1/path = NodePath("background:rect_position:x")
+tracks/1/path = NodePath("background/background:rect_position:x")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -38,7 +39,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 )
 }
 tracks/2/type = "bezier"
-tracks/2/path = NodePath("background:rect_position:y")
+tracks/2/path = NodePath("background/background:rect_position:y")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -65,7 +66,7 @@ resource_name = "pan"
 loop = true
 step = 0.25
 tracks/0/type = "value"
-tracks/0/path = NodePath("background:rect_position")
+tracks/0/path = NodePath("background/background:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -74,7 +75,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.25, 0.5, 0.75, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 150, 256 ), Vector2( 176, 248 ), Vector2( 128, 256 ), Vector2( 88, 288 ), Vector2( 150, 256 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 26, -8 ), Vector2( -22, 0 ), Vector2( -62, 32 ), Vector2( 0, 0 ) ]
 }
 
 [node name="main" type="Node"]
@@ -107,66 +108,69 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -150.0
-margin_top = -256.0
-margin_right = -150.0
-margin_bottom = -256.0
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
 
-[node name="CardBack" type="Sprite" parent="menu/background"]
+[node name="background" type="Node2D" parent="menu/background"]
+position = Vector2( -34.9275, 18.7605 )
+
+[node name="CardBack" type="Sprite" parent="menu/background/background"]
 position = Vector2( -201.621, -9.61887 )
 rotation = -0.505746
 scale = Vector2( 3.47029, 3.47029 )
 texture = ExtResource( 3 )
 
-[node name="CardBack6" type="Sprite" parent="menu/background"]
+[node name="CardBack6" type="Sprite" parent="menu/background/background"]
 position = Vector2( -371.811, 80 )
 rotation = -0.505746
 scale = Vector2( 3.47029, 3.47029 )
 texture = ExtResource( 3 )
 
-[node name="CardBack5" type="Sprite" parent="menu/background"]
+[node name="CardBack5" type="Sprite" parent="menu/background/background"]
 position = Vector2( 36.1894, 208 )
 rotation = -0.505746
 scale = Vector2( 3.47029, 3.47029 )
 texture = ExtResource( 3 )
 
-[node name="CardBack8" type="Sprite" parent="menu/background"]
+[node name="CardBack8" type="Sprite" parent="menu/background/background"]
 position = Vector2( 364.189, 40 )
 rotation = -0.505746
 scale = Vector2( 3.47029, 3.47029 )
 texture = ExtResource( 3 )
 
-[node name="CardBack9" type="Sprite" parent="menu/background"]
+[node name="CardBack9" type="Sprite" parent="menu/background/background"]
 position = Vector2( -139.811, 296 )
 rotation = -0.505746
 scale = Vector2( 3.47029, 3.47029 )
 texture = ExtResource( 3 )
 
-[node name="CardBack2" type="Sprite" parent="menu/background"]
+[node name="CardBack2" type="Sprite" parent="menu/background/background"]
 position = Vector2( -57.6212, -89.6189 )
 rotation = -0.505746
 scale = Vector2( 3.47029, 3.47029 )
 texture = ExtResource( 2 )
 
-[node name="CardBack7" type="Sprite" parent="menu/background"]
+[node name="CardBack7" type="Sprite" parent="menu/background/background"]
 position = Vector2( 198.379, 126.381 )
 rotation = -0.505746
 scale = Vector2( 3.47029, 3.47029 )
 texture = ExtResource( 2 )
 
-[node name="CardBack3" type="Sprite" parent="menu/background"]
+[node name="CardBack3" type="Sprite" parent="menu/background/background"]
 position = Vector2( 94.3788, -169.619 )
 rotation = -0.505746
 scale = Vector2( 3.47029, 3.47029 )
 texture = ExtResource( 3 )
 
-[node name="CardBack4" type="Sprite" parent="menu/background"]
+[node name="CardBack4" type="Sprite" parent="menu/background/background"]
 position = Vector2( 246.379, -249.619 )
 rotation = -0.505746
 scale = Vector2( 3.47029, 3.47029 )
 texture = ExtResource( 3 )
 
-[node name="Label" type="Label" parent="menu/background"]
+[node name="Label" type="Label" parent="menu/background/background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = -155.811
@@ -179,7 +183,7 @@ align = 1
 valign = 1
 autowrap = true
 
-[node name="Label2" type="Label" parent="menu/background"]
+[node name="Label2" type="Label" parent="menu/background/background"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 102.379
@@ -258,3 +262,7 @@ anims/pan = SubResource( 2 )
 
 [node name="scenes" type="Node" parent="."]
 script = ExtResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true

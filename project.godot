@@ -10,11 +10,11 @@ config_version=4
 
 [application]
 
-config/name="adet_midterms"
+config/name="Word Builder"
 run/main_scene="res://src/main/main.tscn"
 boot_splash/show_image=false
 boot_splash/bg_color=Color( 1, 1, 1, 1 )
-config/icon="res://icon.png"
+config/icon="res://src/main/card_back.png"
 
 [display]
 
@@ -27,6 +27,7 @@ window/stretch/aspect="expand"
 [gui]
 
 theme/custom="res://src/main/default_theme.tres"
+common/snap_controls_to_pixels=false
 
 [input_devices]
 

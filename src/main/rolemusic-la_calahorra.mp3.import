@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/rolemusic-la_calahorra.mp3-f9ccd02b5650b35a630426274715e474.mp3str"
+
+[deps]
+
+source_file="res://src/main/rolemusic-la_calahorra.mp3"
+dest_files=[ "res://.import/rolemusic-la_calahorra.mp3-f9ccd02b5650b35a630426274715e474.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

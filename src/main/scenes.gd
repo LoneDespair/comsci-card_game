@@ -2,6 +2,7 @@ extends Node
 
 const PLAY := preload("res://src/play/play.tscn")
 
+#onready var 
 onready var play_button := $"%play"
 onready var ui := $"../ui"
 
