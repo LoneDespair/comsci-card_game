@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=13 format=2]
+[gd_resource type="Theme" load_steps=15 format=2]
 
 [ext_resource path="res://src/main/roboto-bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://src/main/card_empty.png" type="Texture" id=2]
@@ -33,6 +33,17 @@ region_rect = Rect2( 0, 0, 42, 60 )
 [sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.356863, 0.172549, 0.435294, 1 )
 
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.839216, 0.917647, 0.972549, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.301961, 0.341176, 0.4, 1 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.980392, 0.858824, 0.847059, 1 )
+
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 1 )
 
@@ -51,3 +62,8 @@ Label/colors/font_color = Color( 0, 0, 0, 1 )
 LetterButton/base_type = "Button"
 LetterButton/colors/font_color = Color( 1, 1, 1, 1 )
 LetterButton/styles/normal = SubResource( 8 )
+NeutralLetter/base_type = "Button"
+NeutralLetter/colors/font_color = Color( 0.301961, 0.341176, 0.4, 1 )
+NeutralLetter/styles/normal = SubResource( 12 )
+WrongLetter/base_type = "Button"
+WrongLetter/styles/normal = SubResource( 11 )
