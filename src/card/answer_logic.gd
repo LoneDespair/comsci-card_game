@@ -34,6 +34,7 @@ func add(letter_scn : Button, holder : Control) -> void:
 
 
 func press(letter_scn : Button) -> void:
+	checker.uncheck()
 	letter_scn.get_parent().remove_child(letter_scn)
 	
 	letter_scn.disconnect("pressed", self, "press")

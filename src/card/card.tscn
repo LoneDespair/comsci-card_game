@@ -8,6 +8,7 @@
 [ext_resource path="res://src/main/roboto_regular.ttf" type="DynamicFontData" id=7]
 
 [sub_resource type="DynamicFont" id=6]
+size = 18
 font_data = ExtResource( 7 )
 
 [sub_resource type="StyleBoxFlat" id=5]
@@ -60,7 +61,7 @@ custom_constants/separation = 0
 [node name="question" type="Label" parent="ui/content"]
 unique_name_in_owner = true
 margin_right = 244.0
-margin_bottom = 153.0
+margin_bottom = 134.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 6 )
 custom_styles/normal = SubResource( 5 )
@@ -69,6 +70,11 @@ align = 1
 valign = 1
 autowrap = true
 clip_text = true
+
+[node name="Label" type="Label" parent="ui/content"]
+margin_top = 134.0
+margin_right = 244.0
+margin_bottom = 153.0
 
 [node name="answer" type="GridContainer" parent="ui/content"]
 unique_name_in_owner = true
