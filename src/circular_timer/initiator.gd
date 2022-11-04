@@ -22,14 +22,13 @@ func start(new_wait_time := wait_time) -> void:
 
 
 func stop() -> void:
-	set_process(true)
+	set_process(false)
 
 
 func _process(delta: float) -> void:
 	remaining_time -= delta
 	progress_bar.value = remaining_time
 	count_label.text = str(ceil(remaining_time))
-	print(remaining_time)
 	
 	if remaining_time <= 0:
 		emit_signal("timeout")
