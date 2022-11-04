@@ -5,7 +5,7 @@ const CARD_PCK := preload("../card/card.tscn")
 onready var deck := $"%deck"
 onready var turn := $"../turn"
 
-var key_list := ["PROPOSITION", "COCO", "DONUT", "JELLY", "CAKE"]
+var key_list := ["COCO", "COCO", "DONUT", "JELLY", "CAKE"]
 
 
 func _ready() -> void:

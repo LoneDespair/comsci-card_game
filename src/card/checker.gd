@@ -39,6 +39,7 @@ func check() -> void:
 		answer += letter_scn.text
 	
 	if answer == key:
+		uncheck("CorrectLetter", true)
 		correct_label.show()
 		emit_signal("correct")
 	
