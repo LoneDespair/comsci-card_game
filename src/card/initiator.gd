@@ -4,6 +4,8 @@ onready var ui := $"../ui"
 onready var content := $"%content"
 onready var selection_background := $"%selection_background"
 onready var next_button := $"%next"
+onready var checker := $"../checker"
+onready var correction_label := $"%correction"
 
 
 func set_front(is_front : bool) -> void:
@@ -21,5 +23,8 @@ func set_front(is_front : bool) -> void:
 func timeout() -> void:
 	selection_background.hide()
 	next_button.show()
+	
+	checker.uncheck("WrongLetter", true)
+	correction_label.text = "Correct Answer is:\n" + checker.key
 
 

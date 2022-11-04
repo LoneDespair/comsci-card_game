@@ -52,16 +52,18 @@ func check() -> void:
 		prints("%s does not match the key %s" % [answer, key])
 
 
-func uncheck() -> void:
+func uncheck(variation : String, disabled : bool) -> void:
 	wrong_label.hide()
 	
 	var letter_list := get_letter_list()
 	
 	for idx in letter_list.size():
 		var letter_scn := letter_list[idx] as Button
-		letter_scn.theme_type_variation = "NeutralLetter"
-		letter_scn.get_node("animator").stop()
-		letter_scn.get_node("animator").seek(0, true)
-	
-
-
+		letter_scn.theme_type_variation = variation
+		letter_scn.disabled = disabled
+		
+		var animation := letter_scn.get_node("animator") as AnimationPlayer
+		
+		if animation.is_playing():
+			animation.stop()
+			letter_scn.get_node("animator").seek(0, true)

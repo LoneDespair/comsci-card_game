@@ -41,3 +41,4 @@ clip_text = true
 
 [node name="initiator" type="Node" parent="."]
 script = ExtResource( 3 )
+wait_time = 8.0
