@@ -1,8 +1,18 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/play/initiator.gd" type="Script" id=1]
 [ext_resource path="res://src/circular_timer/circular_timer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/play/turn.gd" type="Script" id=3]
+[ext_resource path="res://src/play/header_font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://src/main/ui_sheet.png" type="Texture" id=5]
+
+[sub_resource type="StyleBoxFlat" id=11]
+draw_center = false
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 5 )
+region = Rect2( 418, 626, 62, 56 )
 
 [sub_resource type="Gradient" id=4]
 offsets = PoolRealArray( 0, 0.815981, 0.987893 )
@@ -45,8 +55,6 @@ scale_random = 1.0
 scale_curve = SubResource( 9 )
 color_ramp = SubResource( 5 )
 
-[sub_resource type="StyleBoxFlat" id=3]
-
 [node name="play" type="Node"]
 
 [node name="content" type="VBoxContainer" parent="."]
@@ -54,15 +62,59 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-alignment = 1
+custom_constants/separation = 8
 
-[node name="circular_timer" parent="content" instance=ExtResource( 2 )]
+[node name="header" type="MarginContainer" parent="content"]
+margin_right = 300.0
+margin_bottom = 66.0
+custom_constants/margin_right = 8
+custom_constants/margin_top = 8
+custom_constants/margin_left = 8
+custom_constants/margin_bottom = 8
+
+[node name="circular_timer" parent="content/header" instance=ExtResource( 2 )]
 unique_name_in_owner = true
+margin_top = 8.0
+margin_bottom = 58.0
+size_flags_vertical = 0
+
+[node name="Label" type="Label" parent="content/header"]
+margin_left = 245.0
+margin_top = 19.0
+margin_right = 292.0
+margin_bottom = 46.0
+size_flags_horizontal = 8
+custom_fonts/font = ExtResource( 4 )
+text = "0/10"
+
+[node name="Button" type="Button" parent="content/header"]
+margin_left = 8.0
+margin_top = 15.0
+margin_right = 43.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 35, 35 )
+size_flags_horizontal = 0
+size_flags_vertical = 4
+custom_styles/normal = SubResource( 11 )
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="content/header/Button"]
+self_modulate = Color( 0.301961, 0.341176, 0.4, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = -2.0
+margin_bottom = -2.0
+texture = SubResource( 12 )
+expand = true
+stretch_mode = 6
 
 [node name="Control" type="Control" parent="content"]
-margin_top = 54.0
+margin_top = 74.0
 margin_right = 300.0
 margin_bottom = 512.0
+rect_min_size = Vector2( 0, 415 )
 size_flags_vertical = 3
 
 [node name="deck" type="HBoxContainer" parent="content/Control"]
@@ -106,15 +158,6 @@ one_shot = true
 explosiveness = 0.4
 visibility_rect = Rect2( -150, -150, 300, 300 )
 process_material = SubResource( 10 )
-
-[node name="PanelContainer" type="PanelContainer" parent="content"]
-visible = false
-margin_top = 512.0
-margin_right = 300.0
-margin_bottom = 512.0
-rect_min_size = Vector2( 300, 0 )
-size_flags_horizontal = 6
-custom_styles/panel = SubResource( 3 )
 
 [node name="turn" type="Node" parent="."]
 script = ExtResource( 3 )

@@ -1,10 +1,11 @@
-[gd_resource type="Theme" load_steps=19 format=2]
+[gd_resource type="Theme" load_steps=20 format=2]
 
 [ext_resource path="res://src/main/roboto-bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://src/main/card_empty.png" type="Texture" id=2]
 [ext_resource path="res://src/main/card_back.png" type="Texture" id=3]
 [ext_resource path="res://src/card/normal_red_letter.tres" type="StyleBox" id=4]
 [ext_resource path="res://src/card/disabled_red_letter.tres" type="StyleBox" id=5]
+[ext_resource path="res://src/main/normal_blue_button.tres" type="StyleBox" id=6]
 
 [sub_resource type="StyleBoxTexture" id=10]
 content_margin_left = 24.0
@@ -74,6 +75,7 @@ Button/colors/font_color_disabled = Color( 0.996078, 0.996078, 0.996078, 1 )
 Button/colors/font_color_focus = Color( 0.301961, 0.341176, 0.4, 1 )
 Button/colors/font_color_hover = Color( 0.301961, 0.341176, 0.4, 1 )
 Button/colors/font_color_pressed = Color( 0.301961, 0.341176, 0.4, 1 )
+Button/styles/normal = ExtResource( 6 )
 CorrectLetter/base_type = "Button"
 CorrectLetter/styles/disabled = SubResource( 15 )
 FrontCard/base_type = "PanelContainer"

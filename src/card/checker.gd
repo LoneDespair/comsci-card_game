@@ -3,6 +3,8 @@ extends Node
 onready var answer_container := $"%answer"
 onready var correct_label := $"%correct"
 onready var wrong_label := $"%wrong"
+onready var selection_background := $"%selection_background"
+onready var next_button := $"%next"
 
 var key : String
 
@@ -39,6 +41,8 @@ func check() -> void:
 		answer += letter_scn.text
 	
 	if answer == key:
+		selection_background.hide()
+		next_button.show()
 		uncheck("CorrectLetter", true)
 		correct_label.show()
 		emit_signal("correct")
