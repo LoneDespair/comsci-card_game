@@ -1,7 +1,54 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/play/initiator.gd" type="Script" id=1]
 [ext_resource path="res://src/play/circular_progress.png" type="Texture" id=2]
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0, 0.987893 )
+colors = PoolColorArray( 0.994202, 1, 0.257813, 1, 1, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=5]
+gradient = SubResource( 4 )
+
+[sub_resource type="Curve" id=6]
+min_value = -200.0
+max_value = 400.0
+_data = [ Vector2( 0, 354.318 ), 0.0, 0.0, 0, 0, Vector2( 0.0825688, 332.5 ), -7729.09, -3201.4, 0, 0, Vector2( 0.21789, 32.5 ), -1225.12, -1153.06, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=7]
+curve = SubResource( 6 )
+
+[sub_resource type="Curve" id=8]
+min_value = 1.0
+max_value = 2.5
+_data = [ Vector2( 0, 2.5 ), 0.0, 0.0, 0, 0, Vector2( 1, 1.22159 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+curve = SubResource( 8 )
+
+[sub_resource type="ParticlesMaterial" id=10]
+emission_shape = 1
+emission_sphere_radius = 2.0
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.5
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 100.0
+linear_accel_random = 0.2
+linear_accel_curve = SubResource( 7 )
+scale = 2.0
+scale_random = 1.0
+scale_curve = SubResource( 9 )
+color_ramp = SubResource( 5 )
+
+[sub_resource type="ParticlesMaterial" id=11]
+flag_disable_z = true
+gravity = Vector3( 0, 98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
 
 [sub_resource type="StyleBoxFlat" id=3]
 
@@ -47,6 +94,35 @@ margin_bottom = 234.0
 size_flags_vertical = 3
 custom_constants/separation = 15
 alignment = 1
+
+[node name="correct_label" type="Label" parent="content/Control"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Correct Answer!"
+align = 1
+valign = 1
+
+[node name="wrong_label" type="Label" parent="content/Control"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "Correct Answer!"
+align = 1
+valign = 1
+
+[node name="fire" type="Particles2D" parent="content/Control"]
+position = Vector2( 154, 192 )
+emitting = false
+amount = 250
+lifetime = 0.5
+one_shot = true
+explosiveness = 0.4
+process_material = SubResource( 10 )
+
+[node name="Particles2D" type="Particles2D" parent="content/Control/fire"]
+amount = 10
+process_material = SubResource( 11 )
 
 [node name="PanelContainer" type="PanelContainer" parent="content"]
 visible = false
