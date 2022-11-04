@@ -7,7 +7,7 @@ onready var fire := $"%fire"
 #onready var scroll := $"%scroll"
 
 var current_idx := -1
-var key_list := ["PROPOSITION"]#, "COCO", "DONUT", "JELLY", "CAKE"]
+var key_list := ["PROPOSITION", "COCO", "DONUT", "JELLY", "CAKE"]
 
 
 func _ready() -> void:
