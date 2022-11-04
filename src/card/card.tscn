@@ -63,7 +63,6 @@ unique_name_in_owner = true
 margin_right = 194.0
 margin_bottom = 155.0
 size_flags_vertical = 3
-custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 6 )
 custom_styles/normal = SubResource( 5 )
 text = "It is a declarative sentence (that is, a sentence that declares a fact) that is either true or false, but not both"

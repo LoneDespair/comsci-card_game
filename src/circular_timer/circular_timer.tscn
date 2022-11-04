@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/main/roboto-bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://src/play/circular_progress.png" type="Texture" id=2]
+[ext_resource path="res://src/circular_timer/initiator.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=11]
+size = 27
+font_data = ExtResource( 1 )
+
+[node name="circular_timer" type="MarginContainer"]
+margin_left = 125.0
+margin_right = 175.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+size_flags_horizontal = 4
+
+[node name="progress" type="TextureProgress" parent="."]
+margin_right = 50.0
+margin_bottom = 50.0
+size_flags_horizontal = 5
+value = 20.0
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 2 )
+fill_mode = 4
+tint_progress = Color( 0.945098, 0.580392, 0.541176, 1 )
+nine_patch_stretch = true
+
+[node name="count" type="Label" parent="."]
+margin_right = 50.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+size_flags_vertical = 5
+custom_colors/font_color = Color( 0.945098, 0.580392, 0.541176, 1 )
+custom_fonts/font = SubResource( 11 )
+text = "0"
+align = 1
+valign = 1
+
+[node name="initiator" type="Node" parent="."]
+script = ExtResource( 3 )

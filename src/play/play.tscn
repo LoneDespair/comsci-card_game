@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/play/initiator.gd" type="Script" id=1]
-[ext_resource path="res://src/play/circular_progress.png" type="Texture" id=2]
+[ext_resource path="res://src/circular_timer/circular_timer.tscn" type="PackedScene" id=2]
 
 [sub_resource type="Gradient" id=4]
 offsets = PoolRealArray( 0, 0.815981, 0.987893 )
@@ -55,22 +55,11 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="timer_progress" type="TextureProgress" parent="content"]
-margin_left = 130.0
-margin_right = 170.0
-margin_bottom = 40.0
-rect_min_size = Vector2( 40, 40 )
-size_flags_horizontal = 4
-size_flags_vertical = 0
-value = 8.0
-texture_under = ExtResource( 2 )
-texture_progress = ExtResource( 2 )
-fill_mode = 4
-tint_under = Color( 0.737255, 0.737255, 0.737255, 1 )
-nine_patch_stretch = true
+[node name="circular_timer" parent="content" instance=ExtResource( 2 )]
+unique_name_in_owner = true
 
 [node name="Control" type="Control" parent="content"]
-margin_top = 44.0
+margin_top = 54.0
 margin_right = 300.0
 margin_bottom = 512.0
 size_flags_vertical = 3
@@ -101,7 +90,8 @@ valign = 1
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
-text = "Correct Answer!"
+custom_colors/font_color = Color( 0.905882, 0.298039, 0.235294, 1 )
+text = "Wrong Answer!"
 align = 1
 valign = 1
 

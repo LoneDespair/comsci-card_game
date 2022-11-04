@@ -4,6 +4,7 @@ const CARD_PCK := preload("../card/card.tscn")
 
 onready var deck := $"%deck"
 onready var fire := $"%fire"
+onready var circular_initiator := $"%circular_timer/initiator"
 #onready var scroll := $"%scroll"
 
 var current_idx := -1
@@ -32,6 +33,8 @@ func next() -> void:
 	
 	if card_count <= 0:
 		return
+	
+	circular_initiator.start()
 	
 	if current_idx > -1:
 		deck.get_child(current_idx).get_node("initiator").set_front(false)
