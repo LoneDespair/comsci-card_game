@@ -26,5 +26,6 @@ func timeout() -> void:
 	
 	checker.uncheck("WrongLetter", true)
 	correction_label.text = "Correct Answer is:\n" + checker.key
+	correction_label.show()
 
 

@@ -25,6 +25,7 @@ func next() -> void:
 		var card_initiator := card_scn.get_node("initiator")
 		
 		circular_initiator.connect("timeout", card_initiator, "timeout")
+		card_scn.get_node("checker").connect("correct", self, "correct")
 		
 		card_scn.get_node("%next").connect("pressed", self, "next")
 		deck.rect_position.x -= card_scn.rect_size.x + 5
@@ -34,6 +35,6 @@ func next() -> void:
 
 
 func correct() -> void:
+	circular_initiator.stop()
 	fire.emitting = true
-	next()
 

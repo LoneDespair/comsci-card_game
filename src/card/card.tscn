@@ -91,16 +91,17 @@ rect_min_size = Vector2( 0, 94 )
 alignment = 1
 
 [node name="top" type="MarginContainer" parent="ui/content/center"]
-margin_top = 35.0
+margin_top = 24.0
 margin_right = 234.0
-margin_bottom = 54.0
-rect_min_size = Vector2( 19, 19 )
+margin_bottom = 65.0
+rect_min_size = Vector2( 19, 41 )
 
 [node name="correct" type="Label" parent="ui/content/center/top"]
 unique_name_in_owner = true
 visible = false
+margin_top = 11.0
 margin_right = 234.0
-margin_bottom = 19.0
+margin_bottom = 30.0
 custom_colors/font_color = Color( 0.321569, 0.745098, 0.501961, 1 )
 text = "Correct Answer!"
 align = 1
@@ -109,8 +110,9 @@ valign = 1
 [node name="wrong" type="Label" parent="ui/content/center/top"]
 unique_name_in_owner = true
 visible = false
+margin_top = 11.0
 margin_right = 234.0
-margin_bottom = 19.0
+margin_bottom = 30.0
 custom_colors/font_color = Color( 0.803922, 0.380392, 0.333333, 1 )
 text = "Try Again!"
 align = 1
@@ -119,9 +121,8 @@ valign = 1
 [node name="correction" type="Label" parent="ui/content/center/top"]
 unique_name_in_owner = true
 visible = false
-margin_top = -11.0
 margin_right = 234.0
-margin_bottom = 30.0
+margin_bottom = 41.0
 custom_colors/font_color = Color( 0.803922, 0.380392, 0.333333, 1 )
 text = "Correct answer is:
 Answer here"
@@ -131,9 +132,9 @@ autowrap = true
 [node name="answer" type="GridContainer" parent="ui/content/center"]
 unique_name_in_owner = true
 margin_left = 117.0
-margin_top = 58.0
+margin_top = 69.0
 margin_right = 117.0
-margin_bottom = 58.0
+margin_bottom = 69.0
 size_flags_horizontal = 6
 custom_constants/vseparation = 1
 custom_constants/hseparation = 1

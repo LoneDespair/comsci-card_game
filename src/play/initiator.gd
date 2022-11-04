@@ -17,7 +17,6 @@ func _ready() -> void:
 #		card_scn.get_node("%question").text = key
 		
 		var checker := card_scn.get_node("checker")
-		checker.connect("correct", self, "correct")
 		checker.setup(key)
 	
 	turn.next()
