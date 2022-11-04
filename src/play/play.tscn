@@ -1,18 +1,10 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://src/play/initiator.gd" type="Script" id=1]
 [ext_resource path="res://src/circular_timer/circular_timer.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/play/turn.gd" type="Script" id=3]
 [ext_resource path="res://src/play/header_font.tres" type="DynamicFont" id=4]
-[ext_resource path="res://src/main/ui_sheet.png" type="Texture" id=5]
-
-[sub_resource type="StyleBoxFlat" id=11]
-draw_center = false
-
-[sub_resource type="AtlasTexture" id=12]
-flags = 4
-atlas = ExtResource( 5 )
-region = Rect2( 418, 626, 62, 56 )
+[ext_resource path="res://src/main/exit_icon.tres" type="Texture" id=5]
 
 [sub_resource type="Gradient" id=4]
 offsets = PoolRealArray( 0, 0.815981, 0.987893 )
@@ -62,11 +54,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-custom_constants/separation = 8
+custom_constants/separation = 0
+alignment = 1
 
 [node name="header" type="MarginContainer" parent="content"]
+margin_top = 15.0
 margin_right = 300.0
-margin_bottom = 66.0
+margin_bottom = 81.0
+size_flags_vertical = 4
 custom_constants/margin_right = 8
 custom_constants/margin_top = 8
 custom_constants/margin_left = 8
@@ -87,7 +82,8 @@ size_flags_horizontal = 8
 custom_fonts/font = ExtResource( 4 )
 text = "0/10"
 
-[node name="Button" type="Button" parent="content/header"]
+[node name="exit" type="Button" parent="content/header"]
+unique_name_in_owner = true
 margin_left = 8.0
 margin_top = 15.0
 margin_right = 43.0
@@ -95,10 +91,11 @@ margin_bottom = 50.0
 rect_min_size = Vector2( 35, 35 )
 size_flags_horizontal = 0
 size_flags_vertical = 4
-custom_styles/normal = SubResource( 11 )
+action_mode = 0
+flat = true
 expand_icon = true
 
-[node name="TextureRect" type="TextureRect" parent="content/header/Button"]
+[node name="TextureRect" type="TextureRect" parent="content/header/exit"]
 self_modulate = Color( 0.301961, 0.341176, 0.4, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -106,16 +103,17 @@ margin_left = 2.0
 margin_top = 2.0
 margin_right = -2.0
 margin_bottom = -2.0
-texture = SubResource( 12 )
+mouse_filter = 2
+texture = ExtResource( 5 )
 expand = true
 stretch_mode = 6
 
 [node name="Control" type="Control" parent="content"]
-margin_top = 74.0
+margin_top = 81.0
 margin_right = 300.0
-margin_bottom = 512.0
+margin_bottom = 496.0
 rect_min_size = Vector2( 0, 415 )
-size_flags_vertical = 3
+size_flags_vertical = 4
 
 [node name="deck" type="HBoxContainer" parent="content/Control"]
 unique_name_in_owner = true
@@ -124,9 +122,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = 150.0
-margin_top = -229.0
+margin_top = -202.5
 margin_right = 150.0
-margin_bottom = 239.0
+margin_bottom = -202.5
 size_flags_vertical = 3
 custom_constants/separation = 5
 alignment = 1
