@@ -16,7 +16,7 @@ func _ready() -> void:
 		var card_scn := CARD_PCK.instance()
 		deck.add_child(card_scn)
 		
-		card_scn.get_node("%question").text = key
+#		card_scn.get_node("%question").text = key
 		
 		var checker := card_scn.get_node("checker")
 		checker.connect("correct", self, "correct")
