@@ -3,11 +3,8 @@ extends Node
 const CARD_PCK := preload("../card/card.tscn")
 
 onready var deck := $"%deck"
-onready var fire := $"%fire"
-onready var circular_initiator := $"%circular_timer/initiator"
-#onready var scroll := $"%scroll"
+onready var turn := $"../turn"
 
-var current_idx := -1
 var key_list := ["PROPOSITION", "COCO", "DONUT", "JELLY", "CAKE"]
 
 
@@ -22,38 +19,10 @@ func _ready() -> void:
 		var checker := card_scn.get_node("checker")
 		checker.connect("correct", self, "correct")
 		checker.setup(key)
-		
-		card_scn.get_node("initiator").set_front(false)
 	
-	next()
+	turn.next()
 
 
-func next() -> void:
-	var card_count := deck.get_child_count()
-	
-	if card_count <= 0:
-		return
-	
-	circular_initiator.start()
-	
-	if current_idx > -1:
-		deck.get_child(current_idx).get_node("initiator").set_front(false)
-	
-	
-	if current_idx + 1 < card_count:
-		current_idx += 1
-		var card_scn := deck.get_child(current_idx) as Control
-		card_scn.get_node("initiator").set_front(true)
-		
-		deck.rect_position.x -= card_scn.rect_size.x + 5
-		prints("NExt")
-	
-	else:
-		prints("Gameover")
 
-
-func correct() -> void:
-	fire.emitting = true
-	next()
 
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://src/play/initiator.gd" type="Script" id=1]
 [ext_resource path="res://src/circular_timer/circular_timer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/play/turn.gd" type="Script" id=3]
 
 [sub_resource type="Gradient" id=4]
 offsets = PoolRealArray( 0, 0.815981, 0.987893 )
@@ -114,6 +115,9 @@ margin_bottom = 512.0
 rect_min_size = Vector2( 300, 0 )
 size_flags_horizontal = 6
 custom_styles/panel = SubResource( 3 )
+
+[node name="turn" type="Node" parent="."]
+script = ExtResource( 3 )
 
 [node name="initiator" type="Node" parent="."]
 script = ExtResource( 1 )

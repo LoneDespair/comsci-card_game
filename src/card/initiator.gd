@@ -2,10 +2,11 @@ extends Control
 
 onready var ui := $"../ui"
 onready var content := $"%content"
+onready var selection_background := $"%selection_background"
+onready var next_button := $"%next"
 
 
 func set_front(is_front : bool) -> void:
-	
 	content.visible = is_front
 	
 	if is_front:
@@ -15,5 +16,10 @@ func set_front(is_front : bool) -> void:
 	else:
 		ui.theme_type_variation = "BackCard"
 #		ui.rect_scale = Vector2(0.855, 0.855)
-	
-	
+
+
+func timeout() -> void:
+	selection_background.hide()
+	next_button.show()
+
+
