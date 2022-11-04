@@ -3,10 +3,11 @@ extends Node
 const CARD_PCK := preload("../card/card.tscn")
 
 onready var deck := $"%deck"
+onready var fire := $"%fire"
 #onready var scroll := $"%scroll"
 
 var current_idx := -1
-var key_list := ["COCO", "DONUT", "JELLY", "CAKE"]
+var key_list := ["PROPOSITION"]#, "COCO", "DONUT", "JELLY", "CAKE"]
 
 
 func _ready() -> void:
@@ -35,7 +36,8 @@ func next() -> void:
 	if current_idx > -1:
 		deck.get_child(current_idx).get_node("initiator").set_front(false)
 	
-	if current_idx < card_count:
+	
+	if current_idx + 1 < card_count:
 		current_idx += 1
 		var card_scn := deck.get_child(current_idx) as Control
 		card_scn.get_node("initiator").set_front(true)
@@ -48,6 +50,7 @@ func next() -> void:
 
 
 func correct() -> void:
+	fire.emitting = true
 	next()
 
 

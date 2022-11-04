@@ -1,10 +1,15 @@
 [gd_scene format=2]
 
 [node name="holder" type="PanelContainer"]
-margin_left = 90.0
-margin_top = 17.0
-margin_right = 120.0
-margin_bottom = 57.0
-rect_min_size = Vector2( 30, 40 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -7.5
+margin_top = -12.5
+margin_right = 7.5
+margin_bottom = 12.5
+rect_min_size = Vector2( 16, 25 )
 size_flags_horizontal = 0
 size_flags_vertical = 6
+theme_type_variation = "LetterHolder"

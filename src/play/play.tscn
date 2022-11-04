@@ -1,11 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/play/initiator.gd" type="Script" id=1]
 [ext_resource path="res://src/play/circular_progress.png" type="Texture" id=2]
 
 [sub_resource type="Gradient" id=4]
-offsets = PoolRealArray( 0, 0.987893 )
-colors = PoolColorArray( 0.994202, 1, 0.257813, 1, 1, 0, 0, 1 )
+offsets = PoolRealArray( 0, 0.815981, 0.987893 )
+colors = PoolColorArray( 0.994202, 1, 0.257813, 1, 1, 0.161572, 0, 1, 1, 0, 0, 0 )
 
 [sub_resource type="GradientTexture" id=5]
 gradient = SubResource( 4 )
@@ -28,27 +28,21 @@ curve = SubResource( 8 )
 
 [sub_resource type="ParticlesMaterial" id=10]
 emission_shape = 1
-emission_sphere_radius = 2.0
+emission_sphere_radius = 9.56
 flag_disable_z = true
 spread = 180.0
 gravity = Vector3( 0, 0, 0 )
-initial_velocity = 100.0
+initial_velocity = 200.0
 initial_velocity_random = 0.5
 orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 linear_accel = 100.0
 linear_accel_random = 0.2
 linear_accel_curve = SubResource( 7 )
-scale = 2.0
+scale = 4.0
 scale_random = 1.0
 scale_curve = SubResource( 9 )
 color_ramp = SubResource( 5 )
-
-[sub_resource type="ParticlesMaterial" id=11]
-flag_disable_z = true
-gravity = Vector3( 0, 98, 0 )
-orbit_velocity = 0.0
-orbit_velocity_random = 0.0
 
 [sub_resource type="StyleBoxFlat" id=3]
 
@@ -112,17 +106,15 @@ align = 1
 valign = 1
 
 [node name="fire" type="Particles2D" parent="content/Control"]
+unique_name_in_owner = true
 position = Vector2( 154, 192 )
 emitting = false
-amount = 250
-lifetime = 0.5
+amount = 350
+lifetime = 0.7
 one_shot = true
 explosiveness = 0.4
+visibility_rect = Rect2( -150, -150, 300, 300 )
 process_material = SubResource( 10 )
-
-[node name="Particles2D" type="Particles2D" parent="content/Control/fire"]
-amount = 10
-process_material = SubResource( 11 )
 
 [node name="PanelContainer" type="PanelContainer" parent="content"]
 visible = false
