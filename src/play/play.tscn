@@ -108,28 +108,19 @@ texture = ExtResource( 5 )
 expand = true
 stretch_mode = 6
 
-[node name="Control" type="Control" parent="content"]
+[node name="center" type="Control" parent="content"]
 margin_top = 81.0
 margin_right = 300.0
 margin_bottom = 496.0
 rect_min_size = Vector2( 0, 415 )
 size_flags_vertical = 4
 
-[node name="deck" type="HBoxContainer" parent="content/Control"]
+[node name="deck" type="Control" parent="content/center"]
 unique_name_in_owner = true
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 150.0
-margin_top = -202.5
-margin_right = 150.0
-margin_bottom = -202.5
-size_flags_vertical = 3
-custom_constants/separation = 5
-alignment = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
 
-[node name="correct_label" type="Label" parent="content/Control"]
+[node name="correct_label" type="Label" parent="content/center"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -137,7 +128,7 @@ text = "Correct Answer!"
 align = 1
 valign = 1
 
-[node name="wrong_label" type="Label" parent="content/Control"]
+[node name="wrong_label" type="Label" parent="content/center"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -146,7 +137,7 @@ text = "Wrong Answer!"
 align = 1
 valign = 1
 
-[node name="fire" type="Particles2D" parent="content/Control"]
+[node name="fire" type="Particles2D" parent="content/center"]
 unique_name_in_owner = true
 position = Vector2( 148, 133 )
 emitting = false

@@ -187,8 +187,8 @@ autowrap = true
 [node name="ColorRect" type="ColorRect" parent="menu"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = 1200.0
-margin_bottom = 2048.0
+margin_right = 3000.0
+margin_bottom = 5120.0
 color = Color( 1, 1, 1, 0.847059 )
 
 [node name="MarginContainer" type="MarginContainer" parent="menu"]
@@ -197,13 +197,13 @@ anchor_bottom = 1.0
 custom_constants/margin_right = 8
 custom_constants/margin_top = 8
 custom_constants/margin_left = 8
-custom_constants/margin_bottom = 15
+custom_constants/margin_bottom = 8
 
 [node name="VBoxContainer" type="VBoxContainer" parent="menu/MarginContainer"]
 margin_left = 8.0
 margin_top = 8.0
 margin_right = 292.0
-margin_bottom = 497.0
+margin_bottom = 504.0
 
 [node name="header" type="MarginContainer" parent="menu/MarginContainer/VBoxContainer"]
 margin_right = 284.0
@@ -231,25 +231,25 @@ texture = SubResource( 5 )
 expand = true
 
 [node name="Label" type="Label" parent="menu/MarginContainer/VBoxContainer"]
-margin_top = 84.0
+margin_top = 86.0
 margin_right = 284.0
-margin_bottom = 132.0
+margin_bottom = 134.0
 size_flags_vertical = 6
 custom_fonts/font = SubResource( 3 )
 text = "Word Builder"
 align = 1
 
 [node name="Label2" type="Label" parent="menu/MarginContainer/VBoxContainer"]
-margin_top = 182.0
+margin_top = 185.0
 margin_right = 284.0
-margin_bottom = 201.0
+margin_bottom = 204.0
 
 [node name="play" type="Button" parent="menu/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 margin_left = 87.0
-margin_top = 257.0
+margin_top = 261.0
 margin_right = 197.0
-margin_bottom = 292.0
+margin_bottom = 296.0
 rect_min_size = Vector2( 110, 35 )
 size_flags_horizontal = 4
 size_flags_vertical = 6
@@ -257,13 +257,14 @@ custom_fonts/font = SubResource( 4 )
 text = "Play"
 
 [node name="Label3" type="Label" parent="menu/MarginContainer/VBoxContainer"]
-margin_top = 426.0
+margin_top = 411.0
 margin_right = 284.0
-margin_bottom = 489.0
+margin_bottom = 496.0
 size_flags_vertical = 10
 text = "Members:
 Robert Sardilla
-Kenrix"
+Kenrix Marquez
+"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="menu"]
 autoplay = "pan"
