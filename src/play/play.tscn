@@ -150,7 +150,7 @@ valign = 1
 
 [node name="fire" type="Particles2D" parent="content/Control"]
 unique_name_in_owner = true
-position = Vector2( 154, 192 )
+position = Vector2( 148, 133 )
 emitting = false
 amount = 350
 lifetime = 0.7

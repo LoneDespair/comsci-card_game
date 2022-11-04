@@ -2,9 +2,8 @@ extends Node
 
 const PLAY := preload("res://src/play/play.tscn")
 
-#onready var 
+onready var menu := $"../menu"
 onready var play_button := $"%play"
-onready var ui := $"../ui"
 
 
 func _ready() -> void:
@@ -12,6 +11,6 @@ func _ready() -> void:
 
 
 func play() -> void:
-	ui.hide()
+	menu.hide()
 	get_parent().add_child(PLAY.instance())
 

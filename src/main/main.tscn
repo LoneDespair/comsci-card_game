@@ -80,25 +80,6 @@ tracks/0/keys = {
 
 [node name="main" type="Node"]
 
-[node name="ui" type="Control" parent="."]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="buttons" type="VBoxContainer" parent="ui"]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-alignment = 1
-
-[node name="play" type="Button" parent="ui/buttons"]
-unique_name_in_owner = true
-margin_top = 236.0
-margin_right = 300.0
-margin_bottom = 276.0
-rect_min_size = Vector2( 0, 40 )
-text = "Play"
-
 [node name="menu" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -114,7 +95,7 @@ margin_right = 20.0
 margin_bottom = 20.0
 
 [node name="background" type="Node2D" parent="menu/background"]
-position = Vector2( -34.9275, 18.7605 )
+position = Vector2( -14.7953, -2.57683 )
 
 [node name="CardBack" type="Sprite" parent="menu/background/background"]
 position = Vector2( -201.621, -9.61887 )
@@ -199,6 +180,8 @@ autowrap = true
 [node name="ColorRect" type="ColorRect" parent="menu"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_right = 300.0
+margin_bottom = 512.0
 color = Color( 1, 1, 1, 0.847059 )
 
 [node name="MarginContainer" type="MarginContainer" parent="menu"]
@@ -235,11 +218,12 @@ margin_right = 284.0
 margin_bottom = 195.0
 
 [node name="play" type="Button" parent="menu/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
 margin_left = 87.0
-margin_top = 250.0
+margin_top = 253.0
 margin_right = 197.0
-margin_bottom = 290.0
-rect_min_size = Vector2( 110, 40 )
+margin_bottom = 288.0
+rect_min_size = Vector2( 110, 35 )
 size_flags_horizontal = 4
 size_flags_vertical = 6
 custom_fonts/font = SubResource( 4 )
@@ -265,4 +249,5 @@ script = ExtResource( 1 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
+volume_db = -14.53
 autoplay = true
