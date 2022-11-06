@@ -7,6 +7,10 @@
 [ext_resource path="res://src/main/exit_icon.tres" type="Texture" id=5]
 [ext_resource path="res://src/main/roboto-bold.ttf" type="DynamicFontData" id=6]
 
+[sub_resource type="DynamicFont" id=11]
+size = 20
+font_data = ExtResource( 6 )
+
 [sub_resource type="Gradient" id=4]
 offsets = PoolRealArray( 0, 0.815981, 0.987893 )
 colors = PoolColorArray( 0.994202, 1, 0.257813, 1, 1, 0.161572, 0, 1, 1, 0, 0, 0 )
@@ -47,10 +51,6 @@ scale = 4.0
 scale_random = 1.0
 scale_curve = SubResource( 9 )
 color_ramp = SubResource( 5 )
-
-[sub_resource type="DynamicFont" id=11]
-size = 20
-font_data = ExtResource( 6 )
 
 [node name="play" type="Node"]
 
@@ -143,17 +143,6 @@ text = "Wrong Answer!"
 align = 1
 valign = 1
 
-[node name="fire" type="Particles2D" parent="content/center"]
-unique_name_in_owner = true
-position = Vector2( 148, 133 )
-emitting = false
-amount = 350
-lifetime = 0.7
-one_shot = true
-explosiveness = 0.4
-visibility_rect = Rect2( -150, -150, 300, 300 )
-process_material = SubResource( 10 )
-
 [node name="gameover" type="PanelContainer" parent="content/center"]
 unique_name_in_owner = true
 visible = false
@@ -179,6 +168,17 @@ text = "Congratulations
 You finished the game"
 align = 1
 autowrap = true
+
+[node name="fire" type="Particles2D" parent="content/center"]
+unique_name_in_owner = true
+position = Vector2( 148, 133 )
+emitting = false
+amount = 350
+lifetime = 0.7
+one_shot = true
+explosiveness = 0.4
+visibility_rect = Rect2( -150, -150, 300, 300 )
+process_material = SubResource( 10 )
 
 [node name="turn" type="Node" parent="."]
 script = ExtResource( 3 )

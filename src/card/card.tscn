@@ -75,15 +75,15 @@ theme_type_variation = "FrontCard"
 
 [node name="content" type="VBoxContainer" parent="ui"]
 unique_name_in_owner = true
-margin_left = 28.0
+margin_left = 27.0
 margin_top = 25.0
-margin_right = 262.0
+margin_right = 263.0
 margin_bottom = 390.0
 custom_constants/separation = 0
 
 [node name="question" type="Label" parent="ui/content"]
 unique_name_in_owner = true
-margin_right = 234.0
+margin_right = 236.0
 margin_bottom = 181.0
 size_flags_vertical = 3
 custom_fonts/font = SubResource( 6 )
@@ -96,21 +96,21 @@ clip_text = true
 
 [node name="center" type="VBoxContainer" parent="ui/content"]
 margin_top = 181.0
-margin_right = 234.0
+margin_right = 236.0
 margin_bottom = 275.0
 rect_min_size = Vector2( 0, 94 )
 alignment = 1
 
 [node name="top" type="MarginContainer" parent="ui/content/center"]
 margin_top = 45.0
-margin_right = 234.0
+margin_right = 236.0
 margin_bottom = 45.0
 
 [node name="correct" type="Label" parent="ui/content/center/top"]
 unique_name_in_owner = true
 visible = false
 margin_top = -10.0
-margin_right = 234.0
+margin_right = 236.0
 margin_bottom = 9.0
 custom_colors/font_color = Color( 0.321569, 0.745098, 0.501961, 1 )
 text = "Correct Answer!"
@@ -121,7 +121,7 @@ valign = 1
 unique_name_in_owner = true
 visible = false
 margin_top = -10.0
-margin_right = 234.0
+margin_right = 236.0
 margin_bottom = 9.0
 custom_colors/font_color = Color( 0.803922, 0.380392, 0.333333, 1 )
 text = "Try Again!"
@@ -132,7 +132,7 @@ valign = 1
 unique_name_in_owner = true
 visible = false
 margin_top = -21.0
-margin_right = 234.0
+margin_right = 236.0
 margin_bottom = 20.0
 custom_colors/font_color = Color( 0.803922, 0.380392, 0.333333, 1 )
 text = "Correct answer is:
@@ -142,9 +142,9 @@ autowrap = true
 
 [node name="answer" type="GridContainer" parent="ui/content/center"]
 unique_name_in_owner = true
-margin_left = 117.0
+margin_left = 118.0
 margin_top = 49.0
-margin_right = 117.0
+margin_right = 118.0
 margin_bottom = 49.0
 size_flags_horizontal = 6
 custom_constants/vseparation = 1
@@ -153,22 +153,22 @@ columns = 9
 
 [node name="bottom" type="MarginContainer" parent="ui/content"]
 margin_top = 275.0
-margin_right = 234.0
+margin_right = 236.0
 margin_bottom = 365.0
 rect_min_size = Vector2( 0, 90 )
 
 [node name="selection_background" type="PanelContainer" parent="ui/content/bottom"]
 unique_name_in_owner = true
-margin_right = 234.0
+margin_right = 236.0
 margin_bottom = 90.0
 rect_min_size = Vector2( 0, 61 )
 custom_styles/panel = SubResource( 4 )
 
 [node name="selection" type="GridContainer" parent="ui/content/bottom/selection_background"]
 unique_name_in_owner = true
-margin_left = 117.0
+margin_left = 118.0
 margin_top = 45.0
-margin_right = 117.0
+margin_right = 118.0
 margin_bottom = 45.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -179,9 +179,9 @@ columns = 9
 [node name="next" type="Button" parent="ui/content/bottom"]
 unique_name_in_owner = true
 visible = false
-margin_left = 77.0
+margin_left = 78.0
 margin_top = 28.0
-margin_right = 157.0
+margin_right = 158.0
 margin_bottom = 61.0
 rect_min_size = Vector2( 80, 33 )
 size_flags_horizontal = 4

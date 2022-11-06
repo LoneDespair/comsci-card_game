@@ -12,7 +12,7 @@ config_version=4
 
 config/name="Word Builder"
 run/main_scene="res://src/main/main.tscn"
-boot_splash/show_image=false
+boot_splash/image="res://src/main/1x1.png"
 boot_splash/bg_color=Color( 1, 1, 1, 1 )
 config/icon="res://src/main/card_back.png"
 
