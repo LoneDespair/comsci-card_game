@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://src/card/initiator.gd" type="Script" id=1]
 [ext_resource path="res://src/card/answer_logic.gd" type="Script" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://src/main/roboto_regular.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://src/card/card_place.ogg" type="AudioStream" id=8]
 [ext_resource path="res://src/card/letter_place.ogg" type="AudioStream" id=9]
+[ext_resource path="res://src/play/correct-2-46134.mp3" type="AudioStream" id=10]
+[ext_resource path="res://src/play/wrong-47985.mp3" type="AudioStream" id=11]
 
 [sub_resource type="DynamicFont" id=6]
 size = 18
@@ -189,6 +191,12 @@ size_flags_vertical = 6
 custom_colors/font_color = Color( 0.301961, 0.341176, 0.4, 1 )
 custom_styles/normal = ExtResource( 3 )
 text = "Next"
+
+[node name="correct_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="wrong_audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
 
 [node name="checker" type="Node" parent="."]
 script = ExtResource( 6 )

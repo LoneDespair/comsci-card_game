@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://src/play/initiator.gd" type="Script" id=1]
 [ext_resource path="res://src/circular_timer/circular_timer.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://src/play/header_font.tres" type="DynamicFont" id=4]
 [ext_resource path="res://src/main/exit_icon.tres" type="Texture" id=5]
 [ext_resource path="res://src/main/roboto-bold.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://src/play/finish.mp3" type="AudioStream" id=7]
 
 [sub_resource type="DynamicFont" id=11]
 size = 20
@@ -122,7 +123,8 @@ stretch_mode = 6
 margin_top = 81.0
 margin_right = 300.0
 margin_bottom = 496.0
-rect_min_size = Vector2( 0, 415 )
+rect_min_size = Vector2( 300, 415 )
+size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="deck" type="Control" parent="content/center"]
@@ -187,6 +189,10 @@ margin_bottom = 224.0
 custom_fonts/font = SubResource( 12 )
 text = "0/10"
 align = 1
+
+[node name="finish_audio" type="AudioStreamPlayer" parent="content/center/gameover"]
+unique_name_in_owner = true
+stream = ExtResource( 7 )
 
 [node name="fire" type="Particles2D" parent="content/center"]
 unique_name_in_owner = true

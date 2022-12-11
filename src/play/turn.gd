@@ -29,6 +29,7 @@ onready var fire := $"%fire"
 onready var wave_label := $"%wave"
 onready var gameover_scn := $"%gameover"
 onready var score_label := $"%score"
+onready var finish_audio := $"%finish_audio"
 
 
 func _ready() -> void:
@@ -49,6 +50,8 @@ func next() -> void:
 		gameover_scn.show()
 		score_label.text = "%d/10" % score
 		fire.emitting = true
+		finish_audio.play()
+		
 	
 	else:
 		card_scn = CARD_PCK.instance()

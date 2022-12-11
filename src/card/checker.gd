@@ -6,6 +6,9 @@ onready var wrong_label := $"%wrong"
 onready var selection_background := $"%selection_background"
 onready var next_button := $"%next"
 
+onready var correct_audio := $"../correct_audio"
+onready var wrong_audio := $"../wrong_audio"
+
 var key : String
 
 signal key_setuped
@@ -45,10 +48,12 @@ func check() -> void:
 		next_button.show()
 		uncheck("CorrectLetter", true)
 		correct_label.show()
+		correct_audio.play()
 		emit_signal("correct")
 	
 	else:
 		wrong_label.show()
+		wrong_audio.play()
 		for idx in letter_list.size():
 			var letter_scn := letter_list[idx] as Button
 			letter_scn.theme_type_variation = "WrongLetter"
