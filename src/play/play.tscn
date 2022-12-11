@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://src/play/initiator.gd" type="Script" id=1]
 [ext_resource path="res://src/circular_timer/circular_timer.tscn" type="PackedScene" id=2]
@@ -9,6 +9,10 @@
 
 [sub_resource type="DynamicFont" id=11]
 size = 20
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 24
 font_data = ExtResource( 6 )
 
 [sub_resource type="Gradient" id=4]
@@ -158,16 +162,31 @@ rect_min_size = Vector2( 290, 0 )
 rect_pivot_offset = Vector2( 145, 189 )
 theme_type_variation = "FrontCard"
 
-[node name="Label" type="Label" parent="content/center/gameover"]
-margin_left = 28.0
-margin_top = 182.0
-margin_right = 262.0
-margin_bottom = 233.0
+[node name="VBoxContainer" type="VBoxContainer" parent="content/center/gameover"]
+margin_left = 27.0
+margin_top = 25.0
+margin_right = 263.0
+margin_bottom = 390.0
+alignment = 1
+
+[node name="Label" type="Label" parent="content/center/gameover/VBoxContainer"]
+margin_top = 140.0
+margin_right = 236.0
+margin_bottom = 191.0
 custom_fonts/font = SubResource( 11 )
 text = "Congratulations
 You finished the game"
 align = 1
 autowrap = true
+
+[node name="score" type="Label" parent="content/center/gameover/VBoxContainer"]
+unique_name_in_owner = true
+margin_top = 195.0
+margin_right = 236.0
+margin_bottom = 224.0
+custom_fonts/font = SubResource( 12 )
+text = "0/10"
+align = 1
 
 [node name="fire" type="Particles2D" parent="content/center"]
 unique_name_in_owner = true

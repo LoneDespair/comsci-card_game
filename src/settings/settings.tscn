@@ -11,22 +11,18 @@ custom_constants/margin_top = 5
 custom_constants/margin_left = 5
 custom_constants/margin_bottom = 5
 
-[node name="container" type="VBoxContainer" parent="."]
+[node name="exit" type="Button" parent="."]
+unique_name_in_owner = true
 margin_left = 5.0
 margin_top = 5.0
-margin_right = 295.0
-margin_bottom = 507.0
-
-[node name="exit" type="Button" parent="container"]
-unique_name_in_owner = true
-margin_right = 35.0
-margin_bottom = 35.0
+margin_right = 40.0
+margin_bottom = 40.0
 rect_min_size = Vector2( 35, 35 )
 size_flags_horizontal = 0
 size_flags_vertical = 0
 flat = true
 
-[node name="TextureRect" type="TextureRect" parent="container/exit"]
+[node name="TextureRect" type="TextureRect" parent="exit"]
 self_modulate = Color( 0.301961, 0.341176, 0.4, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -38,10 +34,12 @@ mouse_filter = 2
 texture = ExtResource( 1 )
 expand = true
 
-[node name="Label" type="Label" parent="container"]
-margin_top = 39.0
-margin_right = 290.0
-margin_bottom = 190.0
+[node name="Label" type="Label" parent="."]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 295.0
+margin_bottom = 507.0
+size_flags_vertical = 7
 text = "Members:
 Robert Sardilla
 Kenrix Marquez
@@ -50,6 +48,14 @@ Asset credits:
 Icons: Kenny nl
 Rolemusic - La Calahor"
 align = 1
+valign = 1
+
+[node name="container" type="VBoxContainer" parent="."]
+visible = false
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 295.0
+margin_bottom = 507.0
 
 [node name="initiator" type="Node" parent="."]
 script = ExtResource( 2 )

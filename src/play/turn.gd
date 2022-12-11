@@ -4,6 +4,7 @@ const CARD_PCK := preload("../card/card.tscn")
 
 var card_scn : Control
 var wave_count := -1
+var score := 0
 
 var key_table := {
 	"LOGIC" : "The basis of all mathematical reasoning, and of all automated reasoning",
@@ -27,6 +28,7 @@ onready var circular_initiator := $"%circular_timer/initiator"
 onready var fire := $"%fire"
 onready var wave_label := $"%wave"
 onready var gameover_scn := $"%gameover"
+onready var score_label := $"%score"
 
 
 func _ready() -> void:
@@ -45,6 +47,7 @@ func next() -> void:
 	
 	if wave_count >= 10:
 		gameover_scn.show()
+		score_label.text = "%d/10" % score
 		fire.emitting = true
 	
 	else:
@@ -64,6 +67,7 @@ func next() -> void:
 
 
 func correct() -> void:
+	score += 1
 	circular_initiator.stop()
 	fire.emitting = true
 
